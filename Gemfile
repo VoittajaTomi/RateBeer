@@ -9,7 +9,7 @@ gem 'rails', '3.2.14'
 
 #gem 'sqlite3'
 
-group :developement, :test do
+group :development, :test do
   gem 'sqlite3'
 end
 
