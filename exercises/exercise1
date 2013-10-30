@@ -1,0 +1,164 @@
+irb(main):014:0> Brewery.create :name=>"Brewdog", :year=>2007
+   (0.1ms)  begin transaction
+  SQL (0.6ms)  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Tue, 29 Oct 2013 20:35:21 UTC +00:00], ["name", "Brewdog"], ["updated_at", Tue, 29 Oct 2013 20:35:21 UTC +00:00], ["year", 2007]]
+   (2.6ms)  commit transaction
+=> #<Brewery id: 5, name: "Brewdog", year: 2007, created_at: "2013-10-29 20:35:21", updated_at: "2013-10-29 20:35:21">
+irb(main):015:0> Brewery.last
+  Brewery Load (0.3ms)  SELECT "breweries".* FROM "breweries" ORDER BY "breweries"."id" DESC LIMIT 1
+=> #<Brewery id: 5, name: "Brewdog", year: 2007, created_at: "2013-10-29 20:35:21", updated_at: "2013-10-29 20:35:21">
+irb(main):016:0> b=Brewery.last
+  Brewery Load (0.2ms)  SELECT "breweries".* FROM "breweries" ORDER BY "breweries"."id" DESC LIMIT 1
+=> #<Brewery id: 5, name: "Brewdog", year: 2007, created_at: "2013-10-29 20:35:21", updated_at: "2013-10-29 20:35:21">
+irb(main):017:0> b.Beers
+NoMethodError: undefined method `Beers' for #<Brewery:0x000000039b0cf0>
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activemodel-3.2.14/lib/active_model/attribute_methods.rb:407:in `method_missing'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/attribute_methods.rb:149:in `method_missing'
+	from (irb):17
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):018:0> b.Beer.all
+NoMethodError: undefined method `Beer' for #<Brewery:0x000000039b0cf0>
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activemodel-3.2.14/lib/active_model/attribute_methods.rb:407:in `method_missing'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/attribute_methods.rb:149:in `method_missing'
+	from (irb):18
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):019:0> br.Beer.all
+NameError: undefined local variable or method `br' for main:Object
+	from (irb):19
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):020:0> br
+NameError: undefined local variable or method `br' for main:Object
+	from (irb):20
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):021:0> 
+irb(main):022:0* b
+=> #<Brewery id: 5, name: "Brewdog", year: 2007, created_at: "2013-10-29 20:35:21", updated_at: "2013-10-29 20:35:21">
+irb(main):023:0> b.
+Display all 377 possibilities? (y or n)
+
+b.__id__
+b.__send__
+b._accessible_attributes
+b._accessible_attributes=
+b._accessible_attributes?
+b._active_authorizer
+b._active_authorizer=
+b._active_authorizer?
+b._attr_readonly
+b._attr_readonly?
+b._attribute
+b._commit_callbacks
+b._commit_callbacks=
+b._commit_callbacks?
+b._create_callbacks
+b._create_callbacks=
+b._create_callbacks?
+b._destroy
+b._destroy_callbacks
+b._destroy_callbacks=
+b._destroy_callbacks?
+b._field_changed?
+b._find_callbacks
+b._find_callbacks=
+b._find_callbacks?
+irb(main):023:0> b.Beers
+NoMethodError: undefined method `Beers' for #<Brewery:0x000000039b0cf0>
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activemodel-3.2.14/lib/active_model/attribute_methods.rb:407:in `method_missing'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/attribute_methods.rb:149:in `method_missing'
+	from (irb):23
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):024:0> b.Beers.all
+NoMethodError: undefined method `Beers' for #<Brewery:0x000000039b0cf0>
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activemodel-3.2.14/lib/active_model/attribute_methods.rb:407:in `method_missing'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/attribute_methods.rb:149:in `method_missing'
+	from (irb):24
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):025:0> b.Beer.all
+NoMethodError: undefined method `Beer' for #<Brewery:0x000000039b0cf0>
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activemodel-3.2.14/lib/active_model/attribute_methods.rb:407:in `method_missing'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/activerecord-3.2.14/lib/active_record/attribute_methods.rb:149:in `method_missing'
+	from (irb):25
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):026:0> b.beers.create :name=>"Punk IPA" :style=>"IPA"
+SyntaxError: (irb):26: syntax error, unexpected ':', expecting $end
+b.beers.create :name=>"Punk IPA" :style=>"IPA"
+                                  ^
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/user/.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):027:0> b.beers.create :name=>"Punk IPA", :style=>"IPA"
+   (0.1ms)  begin transaction
+  SQL (0.6ms)  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 5], ["created_at", Tue, 29 Oct 2013 20:37:10 UTC +00:00], ["name", "Punk IPA"], ["style", "IPA"], ["updated_at", Tue, 29 Oct 2013 20:37:10 UTC +00:00]]
+   (4.5ms)  commit transaction
+=> #<Beer id: 14, name: "Punk IPA", style: "IPA", brewery_id: 5, created_at: "2013-10-29 20:37:10", updated_at: "2013-10-29 20:37:10">
+irb(main):028:0> b.beers.create :name=>"Nanny State", :style=>"lowalcohol"
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 5], ["created_at", Tue, 29 Oct 2013 20:37:29 UTC +00:00], ["name", "Nanny State"], ["style", "lowalcohol"], ["updated_at", Tue, 29 Oct 2013 20:37:29 UTC +00:00]]
+   (5.2ms)  commit transaction
+=> #<Beer id: 15, name: "Nanny State", style: "lowalcohol", brewery_id: 5, created_at: "2013-10-29 20:37:29", updated_at: "2013-10-29 20:37:29">
+irb(main):029:0> b.beers
+  Beer Load (0.2ms)  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = 5
+=> [#<Beer id: 14, name: "Punk IPA", style: "IPA", brewery_id: 5, created_at: "2013-10-29 20:37:10", updated_at: "2013-10-29 20:37:10">, #<Beer id: 15, name: "Nanny State", style: "lowalcohol", brewery_id: 5, created_at: "2013-10-29 20:37:29", updated_at: "2013-10-29 20:37:29">]
+irb(main):030:0> b.beers.first
+=> #<Beer id: 14, name: "Punk IPA", style: "IPA", brewery_id: 5, created_at: "2013-10-29 20:37:10", updated_at: "2013-10-29 20:37:10">
+irb(main):031:0> b.beers.first.ratings.create :score => 21
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 14], ["created_at", Tue, 29 Oct 2013 20:37:55 UTC +00:00], ["score", 21], ["updated_at", Tue, 29 Oct 2013 20:37:55 UTC +00:00]]
+   (5.0ms)  commit transaction
+=> #<Rating id: 4, score: 21, beer_id: 14, created_at: "2013-10-29 20:37:55", updated_at: "2013-10-29 20:37:55">
+irb(main):032:0> b.beers.first.ratings.create :score => 15
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 14], ["created_at", Tue, 29 Oct 2013 20:37:57 UTC +00:00], ["score", 15], ["updated_at", Tue, 29 Oct 2013 20:37:57 UTC +00:00]]
+   (3.9ms)  commit transaction
+=> #<Rating id: 5, score: 15, beer_id: 14, created_at: "2013-10-29 20:37:57", updated_at: "2013-10-29 20:37:57">
+irb(main):033:0> b.beers.first.ratings.create :score => 3
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 14], ["created_at", Tue, 29 Oct 2013 20:37:58 UTC +00:00], ["score", 3], ["updated_at", Tue, 29 Oct 2013 20:37:58 UTC +00:00]]
+   (4.5ms)  commit transaction
+=> #<Rating id: 6, score: 3, beer_id: 14, created_at: "2013-10-29 20:37:58", updated_at: "2013-10-29 20:37:58">
+irb(main):034:0> b.beers.last.ratings.create :score => 1
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 15], ["created_at", Tue, 29 Oct 2013 20:38:10 UTC +00:00], ["score", 1], ["updated_at", Tue, 29 Oct 2013 20:38:10 UTC +00:00]]
+   (4.7ms)  commit transaction
+=> #<Rating id: 7, score: 1, beer_id: 15, created_at: "2013-10-29 20:38:10", updated_at: "2013-10-29 20:38:10">
+irb(main):035:0> b.beers.last.ratings.create :score => 10
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 15], ["created_at", Tue, 29 Oct 2013 20:38:11 UTC +00:00], ["score", 10], ["updated_at", Tue, 29 Oct 2013 20:38:11 UTC +00:00]]
+   (4.7ms)  commit transaction
+=> #<Rating id: 8, score: 10, beer_id: 15, created_at: "2013-10-29 20:38:11", updated_at: "2013-10-29 20:38:11">
+irb(main):036:0> b.beers.last.ratings.create :score => 11
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 15], ["created_at", Tue, 29 Oct 2013 20:38:13 UTC +00:00], ["score", 11], ["updated_at", Tue, 29 Oct 2013 20:38:13 UTC +00:00]]
+   (5.3ms)  commit transaction
+=> #<Rating id: 9, score: 11, beer_id: 15, created_at: "2013-10-29 20:38:13", updated_at: "2013-10-29 20:38:13">
+irb(main):037:0> 
+
