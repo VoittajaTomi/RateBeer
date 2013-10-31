@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
@@ -36,6 +37,7 @@ module Ratebeer
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
+config.assets.initialize_on_precompile = false
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
