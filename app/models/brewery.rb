@@ -7,7 +7,7 @@ class Brewery < ActiveRecord::Base
   def average_rating
 
     avgsum = 0
-    self.beers.each do |beer| angsum +=beer.average_rating
+    self.beers.each { |beer| avgsum +=beer.average_rating }
     return avgsum/beers.count
 
   end
