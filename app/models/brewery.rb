@@ -1,10 +1,10 @@
 class Brewery < ActiveRecord::Base
   attr_accessible :name, :year
-  has_many :beers
+  has_many :beers, :dependent => :destroy
   has_many :ratings, :through => :beers
   #@beers = Beer.all
 
-  def average_rating
+  def avg_rating
 
     avgsum = 0
     self.beers.each { |beer| avgsum +=beer.average_rating }
