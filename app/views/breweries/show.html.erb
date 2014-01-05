@@ -14,8 +14,8 @@
   <% end %>
 </p>
 
-<% if @brewery.ratings %>
-<p> brewery rating count: <% @brewery.ratings.count %> average rating <% @brewery.avg_rating %></p>
+<% if @brewery.ratings.count>0 %>
+<p> brewery rating count: <%= @brewery.ratings.count %> <%= "rating".pluralize(@brewery.ratings.count) %>, average rating <%= @brewery.avg(@brewery.ratings) %></p>
 <% end %>
 <%= link_to 'Edit', edit_brewery_path(@brewery) %> |
 <%= link_to 'Back', breweries_path %>

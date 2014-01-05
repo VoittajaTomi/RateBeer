@@ -18,7 +18,7 @@
 <% if @beer.ratings.empty? %>
 no ratings
 <% else %>
-beer has <%= @beer.ratings.count %> <%= "rating".pluralize(@beer.ratings.count) %> average <%= @beer.average_rating %>
+beer has <%= @beer.ratings.count %> <%= "rating".pluralize(@beer.ratings.count) %> average <%= @beer.avg(@beer.ratings) %>
 <% end %>
 </p><br>
 

@@ -1,19 +1,28 @@
 class Brewery < ActiveRecord::Base
+
+  include TheModule
+
   attr_accessible :name, :year
   has_many :beers, :dependent => :destroy
   has_many :ratings, :through => :beers
-  #@beers = Beer.all
 
-  def avg_rating
+  #validates :name, presence: true
+  validates_presence_of :name
+  validates_numericality_of :year, { :greater_than_or_equal_to => 1042,
+                                   :only_integer => true }
 
-    avgsum = 0
-    self.beers.each { |beer| avgsum +=beer.average_rating }
-    count = self.beers.count
-    if count==0
-      return 0
+
+
+  validate :year_max_curr_year
+
+  def year_max_curr_year
+
+    if not year <= Time.now.year
+
+      errors.add(:year, "year must be less or equal to current year #{Time.now.year}")
+
+
     end
- 
-    return avgsum/count
 
   end
 

@@ -1,19 +1,25 @@
 class Beer < ActiveRecord::Base
+
+  include TheModule
+
   attr_accessible :brewery_id, :name, :style
   belongs_to :brewery
   has_many :ratings, :dependent=>:destroy
 
-  def average_rating
+#  has_many :users, :through => :ratings
 
-    sum = ratings.inject(0.0) { |result, element| result + element.score }
-    return sum / ratings.count
-	
-  end
-  
+  has_many :raters, :through => :ratings, :source => :user
+
+
+
+ # validates_presence_of :name
+
+  validates :name, length: { minimum: 1 }, presence: true
+
   def to_s
-    
+
     name + " brewed by " + brewery.name
-    
+
   end
 
 end
