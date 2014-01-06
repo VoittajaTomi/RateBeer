@@ -4,7 +4,7 @@ class Rating < ActiveRecord::Base
   belongs_to :user
 
   def to_s
-    "#{beer.name} #{score}"
+    "#{beer.name}: #{score}"
   end
 
   validates_numericality_of :score, {:greater_than_or_equal_to => 1,

@@ -1,6 +1,9 @@
 class BeersController < ApplicationController
   # GET /beers
   # GET /beers.json
+  
+ 
+  
   def index
     @beers = Beer.all
 
@@ -36,14 +39,17 @@ class BeersController < ApplicationController
 
   # GET /beers/1/edit
   def edit
+    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
     @beer = Beer.find(params[:id])
+    @breweries = Brewery.all
   end
 
   # POST /beers
   # POST /beers.json
   def create
     @beer = Beer.new(params[:beer])
-
+@styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+@breweries = Brewery.all
     respond_to do |format|
       if @beer.save
         format.html { redirect_to beers_path, notice: 'Beer was successfully created.' }

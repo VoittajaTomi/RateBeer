@@ -11,9 +11,6 @@ class Beer < ActiveRecord::Base
   has_many :raters, :through => :ratings, :source => :user
 
 
-
- # validates_presence_of :name
-
   validates :name, length: { minimum: 1 }, presence: true
 
   def to_s

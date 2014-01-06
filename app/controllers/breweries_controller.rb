@@ -29,7 +29,7 @@ class BreweriesController < ApplicationController
   # GET /breweries/new
   # GET /breweries/new.json
   def new
-    @brewery = Brewery.new
+    @brewery = Brewery.new(params[:brewery])
 
     respond_to do |format|
       format.html # new.html.erb
