@@ -1,0 +1,7 @@
+<% if not @user.new_record? and currently_signed_in? @user§ %>
+  <h1>Changing password for user <%= @user.username %></h1>
+<% end %>
+<%= render 'form' %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
