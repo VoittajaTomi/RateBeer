@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   include TheModule
   
-  attr_accessible :username, :password, :password_confirmation
+  attr_accessible :username, :password, :password_confirmation, :admin
   has_secure_password
   
   has_many :ratings, :dependent => :destroy
@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
   
   validate :password_not_all_letters
   
+  
+  def is_admin?
+    admin == true
+  end
+
+
   
   def favorite_brewery
     
