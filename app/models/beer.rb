@@ -18,5 +18,11 @@ class Beer < ActiveRecord::Base
     name + " brewed by " + brewery.name
 
   end
+  
+  def average_rating
+    
+    avg ratings
+    
+  end
 
 end
