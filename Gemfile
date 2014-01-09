@@ -22,7 +22,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'simplecov', :require => false  
+  gem 'simplecov', :require => false
+  gem 'webmock'  
 end
 
 group :production do
@@ -45,7 +46,7 @@ end
 
 
 gem 'httparty'
-gem 'webmock'
+
 gem "rails-settings-cached", "0.2.4"
 
 gem 'jquery-rails'
