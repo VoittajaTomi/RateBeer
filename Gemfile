@@ -43,6 +43,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+gem 'httparty'
+gem 'webmock'
+gem "rails-settings-cached", "0.2.4"
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password

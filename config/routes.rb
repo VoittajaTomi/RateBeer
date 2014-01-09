@@ -7,6 +7,8 @@ Ratebeer::Application.routes.draw do
 
   resources :breweries
 
+  get 'places' => 'places#index'
+  post 'places' => 'places#search'
 
   root :to => 'breweries#index'
   
