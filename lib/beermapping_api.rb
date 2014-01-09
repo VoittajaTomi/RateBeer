@@ -22,6 +22,30 @@ class BeermappingAPI
       set << Place.new(place)
     end
   end
+  
+  def self.fetch_locquery(id)
+    url = "http://beermapping.com/webservice/locquery/#{key}/"
+
+    response = HTTParty.get "#{url}#{id}"
+    data = response.parsed_response["bmp_locations"]["location"]
+
+    return nil if data['id']=="0" 
+
+    
+    Place.new(data)
+    
+  end
+
+  def self.fetch_score(id)
+    
+    url = "http://beermapping.com/webservice/locscore/#{key}/"
+    response = HTTParty.get "#{url}#{id}"
+    scores = response.parsed_response["bmp_locations"]["location"]
+
+    
+    scores['overall'].to_f    
+
+  end
 
   def self.key
     Settings.beermapping_apikey

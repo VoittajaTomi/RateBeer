@@ -5,7 +5,10 @@ class Beer < ActiveRecord::Base
   attr_accessible :brewery_id, :name, :style
   belongs_to :brewery
   has_many :ratings, :dependent=>:destroy
+  
+  has_one :style
 
+  
 #  has_many :users, :through => :ratings
 
   has_many :raters, :through => :ratings, :source => :user
