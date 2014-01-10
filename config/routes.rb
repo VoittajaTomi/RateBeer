@@ -10,6 +10,9 @@ Ratebeer::Application.routes.draw do
   get 'places' => 'places#index'
   post 'places' => 'places#search'
   
+  get 'styles' => 'styles#index'
+  #resources :styles, :only => [:index, :new, :create, :destroy]
+  resources :styles
   resources :places, :only => [:index, :show]
   
 

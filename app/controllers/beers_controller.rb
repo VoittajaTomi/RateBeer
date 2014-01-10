@@ -54,8 +54,7 @@ end
   # POST /beers.json
   def create
     @beer = Beer.new(params[:beer])
-@styles = Style.all
-@breweries = Brewery.all
+
     respond_to do |format|
       if @beer.save
         format.html { redirect_to beers_path, notice: 'Beer was successfully created.' }

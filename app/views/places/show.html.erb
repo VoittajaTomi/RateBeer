@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b><h3><%= @place.name %></h3></b>
+  <h4>Score:
+  <% if @score == "0.0" %>
+  <%= @score %>
+  <% else %>
+  <%= "no score" %>
+  <% end %>
+  
+  </h4>
+  <%= @place.street %>
+</p>
+
+  
+  <iframe width=640 height=480 src="<%= @place.blogmap %>"></iframe> 

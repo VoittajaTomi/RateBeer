@@ -2,11 +2,13 @@ class Beer < ActiveRecord::Base
 
   include TheModule
 
-  attr_accessible :brewery_id, :name, :style
+  attr_accessible :brewery_id, :name, :style_id, :style
+  belongs_to :style
   belongs_to :brewery
   has_many :ratings, :dependent=>:destroy
   
-  has_one :style
+ # has_one :style_id
+
 
   
 #  has_many :users, :through => :ratings

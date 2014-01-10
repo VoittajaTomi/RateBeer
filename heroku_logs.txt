@@ -1,0 +1,101 @@
+2014-01-09T11:45:13.974560+00:00 app[web.1]: 
+2014-01-09T11:45:13.974372+00:00 app[web.1]: ============================================================):
+2014-01-09T11:45:13.974566+00:00 heroku[router]: at=info method=POST path=/places host=lit-oasis-9959.herokuapp.com fwd="84.251.121.219" dyno=web.1 connect=1ms service=18ms status=500 bytes=643
+2014-01-09T11:45:15.510930+00:00 app[web.1]: Processing by PlacesController#search as HTML
+2014-01-09T11:45:15.507684+00:00 app[web.1]: Started POST "/places" for 84.251.121.219 at 2014-01-09 11:45:15 +0000
+2014-01-09T11:45:15.510930+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"xx0Msot5rzgjkeb3yW/Y4OjWxKXuLNohfAua621p9Ro=", "city"=>"espoo", "commit"=>"Search"}
+2014-01-09T11:45:15.512156+00:00 app[web.1]: Completed 500 Internal Server Error in 1ms
+2014-01-09T11:45:15.513786+00:00 app[web.1]: 
+2014-01-09T11:45:15.513786+00:00 app[web.1]: stub_request(:get, "http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo").
+2014-01-09T11:45:15.513786+00:00 app[web.1]: WebMock::NetConnectNotAllowedError (Real HTTP connections are disabled. Unregistered request: GET http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo
+2014-01-09T11:45:15.513786+00:00 app[web.1]: 
+2014-01-09T11:45:15.513786+00:00 app[web.1]: You can stub this request with the following snippet:
+2014-01-09T11:45:15.513786+00:00 app[web.1]: 
+2014-01-09T11:45:15.513786+00:00 app[web.1]:   to_return(:status => 200, :body => "", :headers => {})
+2014-01-09T11:45:15.513786+00:00 app[web.1]:   lib/beermapping_api.rb:15:in `fetch_places_in'
+2014-01-09T11:45:15.513957+00:00 app[web.1]:   lib/beermapping_api.rb:5:in `places_in'
+2014-01-09T11:45:15.513957+00:00 app[web.1]:   app/controllers/places_controller.rb:9:in `search'
+2014-01-09T11:45:15.513957+00:00 app[web.1]: 
+2014-01-09T11:45:15.513957+00:00 app[web.1]: 
+2014-01-09T11:45:15.513786+00:00 app[web.1]: 
+2014-01-09T11:45:15.513786+00:00 app[web.1]: ============================================================):
+2014-01-09T11:45:15.518143+00:00 heroku[router]: at=info method=POST path=/places host=lit-oasis-9959.herokuapp.com fwd="84.251.121.219" dyno=web.1 connect=0ms service=39ms status=500 bytes=643
+2014-01-09T11:45:16.934455+00:00 app[web.1]: Started POST "/places" for 84.251.121.219 at 2014-01-09 11:45:16 +0000
+2014-01-09T11:45:21.939470+00:00 app[web.1]: Processing by PlacesController#search as HTML
+2014-01-09T11:45:21.939470+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"xx0Msot5rzgjkeb3yW/Y4OjWxKXuLNohfAua621p9Ro=", "city"=>"espoo", "commit"=>"Search"}
+2014-01-09T11:45:21.940867+00:00 app[web.1]: Completed 500 Internal Server Error in 1ms
+2014-01-09T11:45:21.942288+00:00 app[web.1]: WebMock::NetConnectNotAllowedError (Real HTTP connections are disabled. Unregistered request: GET http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo
+2014-01-09T11:45:21.942288+00:00 app[web.1]: 
+2014-01-09T11:45:21.942288+00:00 app[web.1]: 
+2014-01-09T11:45:21.942288+00:00 app[web.1]: You can stub this request with the following snippet:
+2014-01-09T11:45:21.942288+00:00 app[web.1]: stub_request(:get, "http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo").
+2014-01-09T11:45:21.942288+00:00 app[web.1]:   to_return(:status => 200, :body => "", :headers => {})
+2014-01-09T11:45:21.942288+00:00 app[web.1]: 
+2014-01-09T11:45:21.942288+00:00 app[web.1]: ============================================================):
+2014-01-09T11:45:21.942288+00:00 app[web.1]: 
+2014-01-09T11:45:21.942465+00:00 app[web.1]: 
+2014-01-09T11:45:21.942465+00:00 app[web.1]: 
+2014-01-09T11:45:21.942288+00:00 app[web.1]:   lib/beermapping_api.rb:15:in `fetch_places_in'
+2014-01-09T11:45:21.942465+00:00 app[web.1]:   lib/beermapping_api.rb:5:in `places_in'
+2014-01-09T11:45:21.942465+00:00 app[web.1]:   app/controllers/places_controller.rb:9:in `search'
+2014-01-09T11:44:59.150075+00:00 heroku[router]: at=info method=POST path=/places host=lit-oasis-9959.herokuapp.com fwd="84.251.121.219" dyno=web.1 connect=1ms service=75ms status=500 bytes=643
+2014-01-09T11:45:21.941472+00:00 heroku[router]: at=info method=POST path=/places host=lit-oasis-9959.herokuapp.com fwd="84.251.121.219" dyno=web.1 connect=1ms service=5018ms status=500 bytes=643
+2014-01-09T11:46:41.483201+00:00 app[web.1]: Started POST "/places" for 84.251.121.219 at 2014-01-09 11:46:41 +0000
+2014-01-09T11:46:41.488381+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"xx0Msot5rzgjkeb3yW/Y4OjWxKXuLNohfAua621p9Ro=", "city"=>"espoo", "commit"=>"Search"}
+2014-01-09T11:46:41.491026+00:00 app[web.1]: Completed 500 Internal Server Error in 2ms
+2014-01-09T11:46:41.488381+00:00 app[web.1]: Processing by PlacesController#search as HTML
+2014-01-09T11:46:41.495473+00:00 heroku[router]: at=info method=POST path=/places host=lit-oasis-9959.herokuapp.com fwd="84.251.121.219" dyno=web.1 connect=3ms service=19ms status=500 bytes=643
+2014-01-09T11:46:41.494908+00:00 app[web.1]: 
+2014-01-09T11:46:41.494908+00:00 app[web.1]: You can stub this request with the following snippet:
+2014-01-09T11:46:41.494908+00:00 app[web.1]: 
+2014-01-09T11:46:41.494908+00:00 app[web.1]: 
+2014-01-09T11:46:41.494908+00:00 app[web.1]: stub_request(:get, "http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo").
+2014-01-09T11:46:41.494908+00:00 app[web.1]: 
+2014-01-09T11:46:41.494908+00:00 app[web.1]:   to_return(:status => 200, :body => "", :headers => {})
+2014-01-09T11:46:41.494908+00:00 app[web.1]: WebMock::NetConnectNotAllowedError (Real HTTP connections are disabled. Unregistered request: GET http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo
+2014-01-09T11:46:41.494908+00:00 app[web.1]:   lib/beermapping_api.rb:15:in `fetch_places_in'
+2014-01-09T11:46:41.494908+00:00 app[web.1]: ============================================================):
+2014-01-09T11:46:41.495099+00:00 app[web.1]:   lib/beermapping_api.rb:5:in `places_in'
+2014-01-09T11:46:41.495099+00:00 app[web.1]:   app/controllers/places_controller.rb:9:in `search'
+2014-01-09T11:46:41.495099+00:00 app[web.1]: 
+2014-01-09T11:46:41.495099+00:00 app[web.1]: 
+2014-01-09T11:46:43.324946+00:00 app[web.1]: Started POST "/places" for 84.251.121.219 at 2014-01-09 11:46:43 +0000
+2014-01-09T11:46:43.328204+00:00 app[web.1]: Processing by PlacesController#search as HTML
+2014-01-09T11:46:43.328204+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"xx0Msot5rzgjkeb3yW/Y4OjWxKXuLNohfAua621p9Ro=", "city"=>"espoo", "commit"=>"Search"}
+2014-01-09T11:46:43.329360+00:00 app[web.1]: Completed 500 Internal Server Error in 1ms
+2014-01-09T11:46:43.330810+00:00 app[web.1]: 
+2014-01-09T11:46:43.330810+00:00 app[web.1]: WebMock::NetConnectNotAllowedError (Real HTTP connections are disabled. Unregistered request: GET http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo
+2014-01-09T11:46:43.330810+00:00 app[web.1]: You can stub this request with the following snippet:
+2014-01-09T11:46:43.330810+00:00 app[web.1]: 
+2014-01-09T11:46:43.330810+00:00 app[web.1]: 
+2014-01-09T11:46:43.330810+00:00 app[web.1]: stub_request(:get, "http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo").
+2014-01-09T11:46:43.330810+00:00 app[web.1]:   to_return(:status => 200, :body => "", :headers => {})
+2014-01-09T11:46:43.330810+00:00 app[web.1]: 
+2014-01-09T11:46:43.330810+00:00 app[web.1]: ============================================================):
+2014-01-09T11:46:43.330810+00:00 app[web.1]:   lib/beermapping_api.rb:15:in `fetch_places_in'
+2014-01-09T11:46:43.330999+00:00 app[web.1]:   lib/beermapping_api.rb:5:in `places_in'
+2014-01-09T11:46:43.330999+00:00 app[web.1]:   app/controllers/places_controller.rb:9:in `search'
+2014-01-09T11:46:43.330999+00:00 app[web.1]: 
+2014-01-09T11:46:43.330999+00:00 app[web.1]: 
+2014-01-09T11:47:58.849939+00:00 heroku[run.7997]: Process exited with status 0
+2014-01-09T11:47:58.865474+00:00 heroku[run.7997]: State changed from up to complete
+2014-01-09T11:48:03.674709+00:00 app[web.1]: Started POST "/places" for 84.251.121.219 at 2014-01-09 11:48:03 +0000
+2014-01-09T11:48:03.680181+00:00 app[web.1]: Processing by PlacesController#search as HTML
+2014-01-09T11:48:03.687819+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"xx0Msot5rzgjkeb3yW/Y4OjWxKXuLNohfAua621p9Ro=", "city"=>"espoo", "commit"=>"Search"}
+2014-01-09T11:48:03.689749+00:00 app[web.1]: Completed 500 Internal Server Error in 4ms
+2014-01-09T11:48:03.700099+00:00 app[web.1]: 
+2014-01-09T11:48:03.700099+00:00 app[web.1]: 
+2014-01-09T11:48:03.700099+00:00 app[web.1]: You can stub this request with the following snippet:
+2014-01-09T11:48:03.700099+00:00 app[web.1]: WebMock::NetConnectNotAllowedError (Real HTTP connections are disabled. Unregistered request: GET http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo
+2014-01-09T11:48:03.700099+00:00 app[web.1]: 
+2014-01-09T11:48:03.700099+00:00 app[web.1]: stub_request(:get, "http://beermapping.com/webservice/loccity/bd0547d07d2afec8d3ebb7df621eb984/espoo").
+2014-01-09T11:48:03.700099+00:00 app[web.1]:   to_return(:status => 200, :body => "", :headers => {})
+2014-01-09T11:48:03.700099+00:00 app[web.1]: 
+2014-01-09T11:48:03.700099+00:00 app[web.1]: ============================================================):
+2014-01-09T11:48:03.700099+00:00 app[web.1]:   lib/beermapping_api.rb:15:in `fetch_places_in'
+2014-01-09T11:48:03.700285+00:00 app[web.1]:   lib/beermapping_api.rb:5:in `places_in'
+2014-01-09T11:48:03.700285+00:00 app[web.1]: 
+2014-01-09T11:48:03.700285+00:00 app[web.1]:   app/controllers/places_controller.rb:9:in `search'
+2014-01-09T11:48:03.700285+00:00 app[web.1]: 
+2014-01-09T11:48:03.698728+00:00 heroku[router]: at=info method=POST path=/places host=lit-oasis-9959.herokuapp.com fwd="84.251.121.219" dyno=web.1 connect=1ms service=55ms status=500 bytes=643
+2014-01-09T11:46:43.330750+00:00 heroku[router]: at=info method=POST path=/places host=lit-oasis-9959.herokuapp.com fwd="84.251.121.219" dyno=web.1 connect=1ms service=12ms status=500 bytes=643
