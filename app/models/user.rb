@@ -17,7 +17,21 @@ class User < ActiveRecord::Base
   validates_presence_of :password
   
   validate :password_not_all_letters
+
   
+  def self.top(n)
+    return all.sort_by{ |b| -b.average_rating }.first(n)
+  end
+  
+  def self.best_raters(n)
+    
+    User.all.sort_by{ |u| -u.ratings.count }.first(n)
+    
+  end
+  
+  def to_s
+    username
+  end
   
   def is_admin?
     admin == true

@@ -6,7 +6,7 @@
 </p>
 
 <p> has given <%= @user.ratings.count %> <%= "rating".pluralize(@user.ratings.count) %>, average is <%= @user.avg(@user.ratings) %>. Favorite beer style is <%= @user.favorite_style %>. 
-Favorite brewery is <%= @user.favorite_brewery.name %>.</p>
+<% if @user.favorite_brewery %> Favorite brewery is <%= @user.favorite_brewery.name %>.</p> <% end %>
 
 <ul>
 <% @user.ratings.each do |rating| %>
@@ -19,6 +19,6 @@ Favorite brewery is <%= @user.favorite_brewery.name %>.</p>
 <% end %>
 </ul>
 
-<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' } , :class => 'btn btn-danger'%>
+<%= link_to 'Edit', edit_user_path(@user) , :class => 'btn btn-primary' %> |
+<%= link_to 'Back', users_path , :class => 'btn btn-primary' %>

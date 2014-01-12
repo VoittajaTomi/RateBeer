@@ -7,17 +7,16 @@ class Beer < ActiveRecord::Base
   belongs_to :brewery
   has_many :ratings, :dependent=>:destroy
   
- # has_one :style_id
-
-
-  
-#  has_many :users, :through => :ratings
 
   has_many :raters, :through => :ratings, :source => :user
 
 
   validates :name, length: { minimum: 1 }, presence: true
 
+  def self.top(n)
+    return all.sort_by{ |b| -b.average_rating }.first(n)
+  end
+  
   def to_s
 
     name + " brewed by " + brewery.name

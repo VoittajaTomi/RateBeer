@@ -6,9 +6,54 @@
  <% @ratings.each do |rating| %>
    <li>  <%= rating %> points from user <%= link_to rating.user.username, rating.user %> </li>
  <% end %>
+ 
+ </ul>
+ 
+ 
+  <p>Top beers</p>
+ <ul>
 
+ <% @bestbeers.each do |beer| %>
+ <li><%= beer %></li>
+ <% end %>
+ 
+ </ul>
+ 
+  <p>Top styles</p>
+ <ul>
 
+ <% @beststyles.each do |style| %>
+ <li><%= style %></li>
+ <% end %>
+ 
+ </ul>
+ 
+  <p>Best breweries</p>
+ <ul>
+
+ <% @bestbreweries.each do |brewery| %>
+ <li><%= brewery %></li>
+ <% end %>
+ 
+ </ul>
+ 
+ <p>Best raters</p>
+ <ul>
+
+ <% @raters.each do |rater| %>
+ <li><%= rater %></li>
+ <% end %>
+ 
+ </ul>
+ 
+ <p>Last five ratings</p>
+ <ul>
+ <% @recent.each do |rating| %>
+   <li> <%= rating %> </li>
+ <% end %>
 </ul>
+
+
 <% if not current_user.nil? and currently_signed_in?(current_user) %>
-  <%= link_to 'Add new rating', new_rating_path  %>
+  <%= link_to 'Add new rating', new_rating_path , :class => 'btn btn-primary' %>
 <% end %>

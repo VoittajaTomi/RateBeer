@@ -15,7 +15,7 @@ Ratebeer::Application.routes.draw do
   resources :styles
   resources :places, :only => [:index, :show]
   
-
+  get 'beerlist' => 'beers#list'
   
   root :to => 'breweries#index'
   

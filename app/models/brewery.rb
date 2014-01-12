@@ -2,8 +2,8 @@ class Brewery < ActiveRecord::Base
   
   include TheModule
   
-  attr_accessible :name, :year
-  has_many :beers, :dependent => :destroy
+  attr_accessible :name, :year, :active
+  has_many :beers #, :dependent => :destroy
   has_many :ratings, :through => :beers
   
   #validates :name, presence: true
@@ -15,6 +15,19 @@ class Brewery < ActiveRecord::Base
   
   
   validate :year_max_curr_year
+  
+  
+  scope :active, where(:active => true)
+  scope :retired, where(:active => [nil, false])
+  
+  def self.top(n)
+    return all.sort_by{ |b| -b.average_rating }.first(n)
+  end  
+  
+  def average_rating
+    avg ratings
+  end
+  
   
   def year_max_curr_year
     

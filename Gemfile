@@ -23,7 +23,9 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', :require => false
-  gem 'webmock'  
+  gem 'webmock'
+  gem 'selenium-webdriver'   
+  gem 'database_cleaner', '< 1.1.0'
 end
 
 group :production do
@@ -44,6 +46,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
 
 gem 'httparty'
 

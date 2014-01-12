@@ -4,16 +4,22 @@ class BreweriesController < ApplicationController
   #before_filter :authenticate, :only=>[:destroy]
   before_filter :ensure_that_signed_in, :except => [:index, :show]
 
-  def index
-    @breweries = Brewery.all
+def index
+  @breweries = Brewery.all
+  order = params[:order] || 'name'
+  @active_breweries = Brewery.active
+  @retired_breweries = Brewery.retired
 
-# render :panimot
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @breweries }
-    end
+  case order
+    when 'name' then @breweries.sort_by!{ |b| b.name }
+    when 'year' then @breweries.sort_by!{ |b| b.year }
   end
+
+  respond_to do |format|
+    format.html # index.html.erb
+    format.json { render json: @breweries }
+  end
+end
 
   # GET /breweries/1
   # GET /breweries/1.json
