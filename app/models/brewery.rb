@@ -20,6 +20,10 @@ class Brewery < ActiveRecord::Base
   scope :active, where(:active => true)
   scope :retired, where(:active => [nil, false])
   
+  def to_s
+    "#{name}"
+  end
+  
   def self.top(n)
     return all.sort_by{ |b| -b.average_rating }.first(n)
   end  

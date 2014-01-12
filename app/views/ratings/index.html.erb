@@ -9,51 +9,53 @@
  
  </ul>
  
- 
-  <p>Top beers</p>
- <ul>
-
- <% @bestbeers.each do |beer| %>
- <li><%= beer %></li>
- <% end %>
- 
- </ul>
- 
-  <p>Top styles</p>
- <ul>
-
- <% @beststyles.each do |style| %>
- <li><%= style %></li>
- <% end %>
- 
- </ul>
- 
-  <p>Best breweries</p>
- <ul>
-
- <% @bestbreweries.each do |brewery| %>
- <li><%= brewery %></li>
- <% end %>
- 
- </ul>
- 
- <p>Best raters</p>
- <ul>
-
- <% @raters.each do |rater| %>
- <li><%= rater %></li>
- <% end %>
- 
- </ul>
- 
- <p>Last five ratings</p>
- <ul>
- <% @recent.each do |rating| %>
-   <li> <%= rating %> </li>
- <% end %>
-</ul>
 
 
-<% if not current_user.nil? and currently_signed_in?(current_user) %>
-  <%= link_to 'Add new rating', new_rating_path , :class => 'btn btn-primary' %>
+ <div class="span3">
+ <h3>Top beers</h3>
+ <%= render 'list', :units => @bestbeers %>
+ </div>
+ 
+ <div class="span3">
+ <h3>Best breweries</h3>
+ <%= render 'list', :units => @bestbreweries %>
+ </div>
+ 
+ <div class="span3">
+ <h3>Top styles</h3>
+ <%= render 'list', :units => @beststyles %>
+ </div>
+ 
+
+ 
+<div class="">
+<h2>Most active users</h2>
+<table class="table table-hover">
+<thead>
+<tr>
+<th></th>
+<th>favorite beer</th>
+<th>favorite brewery</th>
+<th>preferred style</th>
+<th>ratings</th>
+</tr>
+</thead>
+<% @raters.each do |user| %>
+<tr>
+<td><%= user.username %></td>
+<td><%= user.favorite_beer %></td>
+<td><%= user.favorite_brewery %></td>
+<td><%= user.favorite_style %></td>
+<td><%= user.ratings.count %></td>
+</tr>
 <% end %>
+</table>
+</div>
+
+<h2>Recent ratings</h2>
+<ul>
+ <% @recent.each do |rating| %>
+   <li>  <%= rating %> points from user <%= link_to rating.user.username, rating.user %> </li>
+ <% end %>
+ 
+ </ul>

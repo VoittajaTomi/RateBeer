@@ -6,6 +6,14 @@ class Rating < ActiveRecord::Base
   def to_s
     "#{beer.name}: #{score}"
   end
+  
+  def name
+    
+    to_s
+    
+  end
+  
+
 
   validates_numericality_of :score, {:greater_than_or_equal_to => 1,
                                      :less_than_or_equal_to => 50,

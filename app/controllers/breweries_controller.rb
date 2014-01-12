@@ -4,6 +4,16 @@ class BreweriesController < ApplicationController
   #before_filter :authenticate, :only=>[:destroy]
   before_filter :ensure_that_signed_in, :except => [:index, :show]
 
+  
+  def toggle_activity
+  brewery = Brewery.find(params[:id])
+  brewery.update_attribute :active, (not brewery.active)
+
+  new_status = brewery.active? ? "active" : "retired"
+
+  redirect_to :back, :notice => "brewery activity status changed to #{new_status}"
+end
+  
 def index
   @breweries = Brewery.all
   order = params[:order] || 'name'

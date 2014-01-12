@@ -7,6 +7,10 @@ Ratebeer::Application.routes.draw do
   
   resources :breweries
   
+  resources :breweries do
+  post 'toggle_activity', :on => :member
+end
+  
   get 'places' => 'places#index'
   post 'places' => 'places#search'
   

@@ -8,7 +8,7 @@
 <% if @beer.ratings.empty? %>
   <p>beer does not have yet been rated!</p>
 <% else %>
-  <p>has been rated <%= @beer.ratings.count %> times, average score <%= @beer.average_rating %></p>
+  <p>has been rated <%= @beer.ratings.count %> times, average score <%= @beer.average_rating.round(1) %></p>
 <% end %>
 
 <h4>give a rating:</h4>
@@ -21,5 +21,4 @@
 
 <p></p>
 
-<%= link_to 'Edit', edit_beer_path(@beer) , :class => 'btn btn-primary' %> 
-<%= link_to 'Destroy', @beer, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+<%= edit_and_destroy_buttons(@beer) %>

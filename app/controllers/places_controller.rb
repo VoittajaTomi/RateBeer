@@ -8,7 +8,7 @@ class PlacesController < ApplicationController
   def show
     #@place = Place.find(params[:id])
     @place = BeermappingAPI.fetch_locquery(params[:id])
-    @score = BeermappingAPI.fetch_score(params[:id])
+    @score = BeermappingAPI.fetch_score(params[:id]).round(1)
     
     respond_to do |format|
       format.html # show.html.erb

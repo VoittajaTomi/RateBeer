@@ -5,10 +5,10 @@
     <th>Year</th>
   </tr>
   </thead>
-  <% breweries.each do |brewery| %>
+  <% @breweries.each do |unit| %>
       <tr>
-        <td><%= link_to brewery.name, brewery %></td>
-        <td><%= brewery.year %></td>
+        <td><%= link_to unit.name, unit %></td>
+        <td><%= unit.year %></td>
       </tr>
   <% end %>
 </table>

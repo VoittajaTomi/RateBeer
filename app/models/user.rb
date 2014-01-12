@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   include TheModule
   
-  attr_accessible :username, :password, :password_confirmation, :admin
+  attr_accessible :username, :password, :password_confirmation, :admin, :name
   has_secure_password
   
   has_many :ratings, :dependent => :destroy
@@ -26,6 +26,12 @@ class User < ActiveRecord::Base
   def self.best_raters(n)
     
     User.all.sort_by{ |u| -u.ratings.count }.first(n)
+    
+  end
+  
+  def name
+    
+    username
     
   end
   

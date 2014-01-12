@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140112000345) do
+ActiveRecord::Schema.define(:version => 20140112200218) do
 
   create_table "beers", :force => true do |t|
     t.string   "name"
@@ -63,5 +63,7 @@ ActiveRecord::Schema.define(:version => 20140112000345) do
     t.string   "password_digest"
     t.boolean  "admin"
   end
+
+  add_index "users", ["username"], :name => "index_users_on_username"
 
 end

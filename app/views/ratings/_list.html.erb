@@ -1,0 +1,14 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th></th>
+    <th>average</th>
+  </tr>
+  </thead>
+  <% units.each do |unit| %>
+      <tr>
+        <td><%= unit.name %></td>
+        <td><%= unit.average_rating.round(1) %></td>
+      </tr>
+  <% end %>
+</table>
