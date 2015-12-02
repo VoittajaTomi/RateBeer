@@ -1,4 +1,3 @@
-[![Build Status](https://api.travis-ci.org/VoittajaTomi/wadror.png)](https://travis-ci.org/VoittajaTomi/wadror)
-[![Code Climate](https://codeclimate.com/github/VoittajaTomi/wadror.png)](https://codeclimate.com/github/VoittajaTomi/wadror)
+This is a course work for Ruby on Rails course in University of Helsinki CS department. It is a Beer rating app with social features.
 
 http://lit-oasis-9959.herokuapp.com
